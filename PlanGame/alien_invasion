@@ -1,0 +1,19 @@
+import pygame
+from pygame.sprite import Group
+import game_functions as gf
+from ViewSet import Settings
+from ShipModel import Ship
+
+def run_game():
+    pygame.init()
+    aisettins = Settings()
+    screen = pygame.display.set_mode((aisettins.screen_width, aisettins.screen_height), 0, 32)
+    ship = Ship(aisettins, screen)
+    bullets = Group()
+    pygame.display.set_caption("CY")
+    while True:
+        gf.check_events(aisettins, screen, ship, bullets)
+        ship.update()
+        bullets.update_bullet()
+        gf.update_screen(aisettins, screen, ship, bullets)
+run_game()
