@@ -13,7 +13,7 @@ def run_game():
     pygame.display.set_caption("CY")
     while True:
         gf.check_events(aisettins, screen, ship, bullets)
-        ship.update()
-        bullets.update_bullet()
-        gf.update_screen(aisettins, screen, ship, bullets)
+        #ship.update()
+        #bullets.update_bullet()
+        #gf.update_screen(aisettins, screen, ship, bullets)
 run_game()
